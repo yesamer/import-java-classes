@@ -1,5 +1,4 @@
 import "@patternfly/react-core/dist/styles/base.css";
-import "@patternfly/react-core/dist/styles/base.css";
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import ImportIcon from '@patternfly/react-icons/dist/js/icons/import-icon';
