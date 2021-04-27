@@ -26,7 +26,6 @@ export const ModalWizard: React.FunctionComponent<ModalWizardProps> = ({
     wizardDescription,
     wizardSteps,
 }: ModalWizardProps) => {
-
     const [isOpen, setOpen] = useState(false);
     const handleModalToggle = () => setOpen(!isOpen);
 
