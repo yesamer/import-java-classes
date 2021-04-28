@@ -15,16 +15,41 @@
  */
 
 import * as React from "react";
+import { useState } from "react";
 import { ModalWizard } from "../ModalWizard";
+import {
+  InputGroup,
+  TextInput,
+} from '@patternfly/react-core';
 
 export const ImportJavaClassesWizard: React.FunctionComponent<ImportJavaClassesWizardProps> = ({
   buttonText,
 }: ImportJavaClassesWizardProps) => {
 
+  const [isSecondStepEnabled, enableSecondStep] = useState(false);
+  const [isThirdStepEnabled] = useState(false);
+  const handleModalToggle = (value : string) => { 
+    if (value === "enable") {enableSecondStep(true); }; 
+    if (value === "disable") {enableSecondStep(false); }; 
+  };
+
+  function SearchJavaClass() {
+    return <InputGroup label="Search">
+      <TextInput 
+        label="Search" 
+        name="textInput11" 
+        id="textInput11" 
+        type="search" 
+        aria-label="search input example" 
+        placeholder="Search a class name..."
+        onChange = {handleModalToggle} />
+    </InputGroup>
+  }
+
   const steps = [
-    { name: 'Select Java classes', component: <p>Step 1 content</p> },
-    { name: 'Cherry-pick fields', component: <p>Step 2 content</p> },
-    { name: 'Review', component: <p>Step 3 content</p>, nextButtonText: 'Import' }
+    { name: 'Select Java classes', component: <SearchJavaClass />, enableNext: isSecondStepEnabled, canJumpTo: false, hideBackButton: true },
+    { name: 'Cherry-pick fields', component: <p>Step 2 content</p>, enableNext: isThirdStepEnabled, canJumpTo: false },
+    { name: 'Review', component: <p>Step 3 content</p>, enableNext: false, canJumpTo: false, nextButtonText: 'Import' }
   ];
 
   return <ModalWizard
