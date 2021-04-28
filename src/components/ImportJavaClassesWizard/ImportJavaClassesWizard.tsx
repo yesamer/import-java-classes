@@ -24,7 +24,7 @@ export const ImportJavaClassesWizard: React.FunctionComponent<ImportJavaClassesW
   const steps = [
     { name: 'Select Java classes', component: <p>Step 1 content</p> },
     { name: 'Cherry-pick fields', component: <p>Step 2 content</p> },
-    { name: 'Review', component: <p>Step 3 content</p>, nextButtonText: 'Finish' }
+    { name: 'Review', component: <p>Step 3 content</p>, nextButtonText: 'Import' }
   ];
 
   return <ModalWizard
