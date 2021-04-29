@@ -25,5 +25,15 @@ export const en: ImportJavaClassesWizardI18n = {
     modalWizard: {
         title : "Import Java classes",
         description : "It converts your java assets to DMN type. This is a one-time import action: if the Java class get updated, you will need to reimport it",
+        firstStep : {
+            stepName : "Select Java classes"
+        },
+        secondStep : {
+            stepName : "Cherry-pick fields"
+        },
+        thirdStep : {
+            stepName : "Review",
+            nextButtonText: "Import",
+        }
     }
   }

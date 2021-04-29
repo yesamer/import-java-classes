@@ -17,6 +17,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { ModalWizard } from "../ModalWizard";
+import { useImportJavaClassesWizardI18n } from "../../i18n";
 import {
   InputGroup,
   TextInput,
@@ -26,6 +27,7 @@ export const ImportJavaClassesWizard: React.FunctionComponent<ImportJavaClassesW
   buttonText,
 }: ImportJavaClassesWizardProps) => {
 
+  const { i18n } = useImportJavaClassesWizardI18n();
   const [isSecondStepEnabled, enableSecondStep] = useState(false);
   const [isThirdStepEnabled] = useState(false);
   const handleModalToggle = (value : string) => { 
@@ -47,16 +49,16 @@ export const ImportJavaClassesWizard: React.FunctionComponent<ImportJavaClassesW
   }
 
   const steps = [
-    { name: 'Select Java classes', component: <SearchJavaClass />, enableNext: isSecondStepEnabled, canJumpTo: false, hideBackButton: true },
-    { name: 'Cherry-pick fields', component: <p>Step 2 content</p>, enableNext: isThirdStepEnabled, canJumpTo: false },
-    { name: 'Review', component: <p>Step 3 content</p>, enableNext: false, canJumpTo: false, nextButtonText: 'Import' }
+    { name: i18n.modalWizard.firstStep.stepName, component: <SearchJavaClass />, enableNext: isSecondStepEnabled, canJumpTo: false, hideBackButton: true },
+    { name: i18n.modalWizard.secondStep.stepName, component: <p>Step 2 content</p>, enableNext: isThirdStepEnabled, canJumpTo: false },
+    { name: i18n.modalWizard.thirdStep.stepName, component: <p>Step 3 content</p>, enableNext: false, canJumpTo: false, nextButtonText: i18n.modalWizard.thirdStep.nextButtonText }
   ];
 
   return <ModalWizard
     buttonStyle="secondary"
-    buttonText="Import Java classes"
-    wizardTitle="Import Java classes"
-    wizardDescription="It converts your java assets to DMN type. This is a one-time import action: if the Java class get updated, you will need to reimport it"
+    buttonText={i18n.modalButton.text}
+    wizardTitle={i18n.modalWizard.title}
+    wizardDescription={i18n.modalWizard.description}
     wizardSteps={steps} />
 }
 

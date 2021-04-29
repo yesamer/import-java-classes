@@ -17,15 +17,23 @@
 import { ReferenceDictionary } from "@kogito-tooling/i18n/dist/core";
 import { CommonI18n } from "@kogito-tooling/i18n-common-dictionary";
 
-type MyDictonary = unknown | ImportJavaClassesWizardDictionary;
-
-interface ImportJavaClassesWizardDictionary extends ReferenceDictionary<MyDictonary> { 
+interface ImportJavaClassesWizardDictionary extends ReferenceDictionary<ImportJavaClassesWizardDictionary> { 
     modalButton : {
         text: string;
     }
     modalWizard: {
         title : string;
         description : string;
+        firstStep : {
+            stepName : string;
+        }
+        secondStep : {
+            stepName : string;
+        }
+        thirdStep : {
+            stepName : string;
+            nextButtonText: string;
+        }
     }
   }
 
