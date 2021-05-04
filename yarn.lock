@@ -1396,17 +1396,17 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@kogito-tooling/i18n-common-dictionary@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@kogito-tooling/i18n-common-dictionary/-/i18n-common-dictionary-0.9.0.tgz#7299f3147de8666764afb2eea75e374f9ea0ac7a"
-  integrity sha512-3ldIBsl8g9vwPVAvWBFYfuS9Ll4uXuCib1jaM2Q10sXgIm4M8UX8wiYfPe6qqpM99zrnXJwKcQm4A0lwzP5c3w==
+"@kogito-tooling/i18n-common-dictionary@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@kogito-tooling/i18n-common-dictionary/-/i18n-common-dictionary-0.9.1.tgz#c0d04e7ddde275ed1b0558efcb13d2e7adca0aac"
+  integrity sha512-yOgCg/jYrynhGLeIIqG27fgzzVg2F5+Jfe8KSWIztjWZwkggqNCghUpRl0KPhw/JE1JROvDXn6zKJ7Ba30+zwg==
   dependencies:
-    "@kogito-tooling/i18n" "0.9.0"
+    "@kogito-tooling/i18n" "0.9.1"
 
-"@kogito-tooling/i18n@0.9.0", "@kogito-tooling/i18n@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@kogito-tooling/i18n/-/i18n-0.9.0.tgz#309fd8aa6c8fbce348315a1229246664964c7c90"
-  integrity sha512-BKgXWDEAwMWGt/nsP/W0iY482UZis13BwC5mdupofCH4FFyTQaR6L+R19PcdPdm/E1cRfHxfu7Cx+yN1RF1K3g==
+"@kogito-tooling/i18n@0.9.1", "@kogito-tooling/i18n@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@kogito-tooling/i18n/-/i18n-0.9.1.tgz#44c60c0e596ddc17caeb03ebfab5e7314f400184"
+  integrity sha512-OP9YlvuBuLBhNUmJ11lKjj4U7JD2YMTsEDqUf6/xNxENHOYxecLBaUDdD3LJQ3++xAGQTeu3sK+vNi1KLpSIUg==
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
