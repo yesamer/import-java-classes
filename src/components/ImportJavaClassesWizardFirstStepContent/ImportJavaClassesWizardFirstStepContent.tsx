@@ -15,7 +15,13 @@
  */
 
 import * as React from "react";
+import { useState } from "react";
 import {
+    DataList,
+    DataListItem,
+    DataListItemRow,
+    DataListCheck,
+    DataListCell,
     InputGroup,
     TextInput,
     EmptyState,
@@ -33,6 +39,14 @@ export const ImportJavaClassesWizardFirstStepContent: React.FunctionComponent<Im
     emptyStateBody
 }: ImportJavaClassesWizardFirstStepContentProps) => {
 
+    const [showEmptyState, setShowEmptySpace] = useState(true);
+    const [valueClass, setValueClass] = useState("");
+    const onChange = (value: string) => {
+        const state = !inputOnChange(value);
+        setShowEmptySpace(state)
+        setValueClass(value);
+    }
+
     return < >
         <InputGroup label={inputLabel}>
             <TextInput
@@ -42,24 +56,48 @@ export const ImportJavaClassesWizardFirstStepContent: React.FunctionComponent<Im
                 type="search"
                 aria-label="search input example"
                 placeholder={inputPlaceHolder}
-                onChange={inputOnChange} />
+                onChange={onChange}
+                autoFocus />
         </InputGroup>
-        <EmptyState>
-            <EmptyStateIcon icon={CubesIcon} />
-            <Title headingLevel="h4" size="lg">
-                {emptyStateTitle}
-            </Title>
-            <EmptyStateBody>
-                {emptyStateBody}
-            </EmptyStateBody>
-        </EmptyState>
+        { showEmptyState ?
+            <EmptyState hidden={true}>
+                <EmptyStateIcon icon={CubesIcon} />
+                <Title headingLevel="h4" size="lg">
+                    {emptyStateTitle}
+                </Title>
+                <EmptyStateBody>
+                    {emptyStateBody}
+                </EmptyStateBody>
+            </EmptyState> :
+            <DataList aria-label="Checkbox and action data list example">
+                <DataListItem aria-labelledby="check-action-item1"></DataListItem>
+                <DataListItemRow>
+                    <DataListCheck aria-labelledby="check-action-item1" name="check-action-check1" />
+                    <DataListCell key="primary content">
+                        <span id="check-action-item1">{valueClass === "Author" ? "org.kogito.test.Author" : valueClass === "Book" ? "org.kogito.test.Book" : ""}</span>
+                    </DataListCell>,
+                </DataListItemRow>
+                <DataListItemRow>
+                    <DataListCheck aria-labelledby="check-action-item2" name="check-action-check2" />
+                    <DataListCell key="primary content">
+                        <span id="check-action-item2">{valueClass === "Author" ? "org.kogito.test.Authorization" : valueClass === "Book" ? "org.kogito.test.Booklet" : ""}</span>
+                    </DataListCell>,
+                </DataListItemRow>
+                <DataListItemRow>
+                    <DataListCheck aria-labelledby="check-action-item3" name="check-action-check3" />
+                    <DataListCell key="primary content">
+                        <span id="check-action-item3">{valueClass === "Author" ? "org.kogito.test.Authority" : valueClass === "Book" ? "org.kogito.test.BookStore" : ""}</span>
+                    </DataListCell>,
+                </DataListItemRow>
+            </DataList>
+        }
     </>
 }
 
 export interface ImportJavaClassesWizardFirstStepContentProps {
     inputLabel: string;
     inputPlaceHolder: string;
-    inputOnChange: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+    inputOnChange: (value: string) => boolean;
     emptyStateTitle: string;
     emptyStateBody: string;
 }
