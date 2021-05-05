@@ -26,6 +26,14 @@ interface ImportJavaClassesWizardDictionary extends ReferenceDictionary<ImportJa
         description : string;
         firstStep : {
             stepName : string;
+            input : {
+                label : string;
+                placeholder : string;
+            }
+            emptyState : {
+                title : string;
+                body : string;
+            }
         }
         secondStep : {
             stepName : string;

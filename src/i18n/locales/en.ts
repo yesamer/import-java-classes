@@ -26,7 +26,15 @@ export const en: ImportJavaClassesWizardI18n = {
         title : "Import Java classes",
         description : "It converts your java assets to DMN type. This is a one-time import action: if the Java class get updated, you will need to reimport it",
         firstStep : {
-            stepName : "Select Java classes"
+            stepName : "Select Java classes",
+            input : {
+                label : "Search",
+                placeholder : "Search a class name ..."
+            },
+            emptyState : {
+                title : "No Java classes selected",
+                body : "Type the Java class name or part of the name to find Java classes you want to import"
+            }
         },
         secondStep : {
             stepName : "Cherry-pick fields"

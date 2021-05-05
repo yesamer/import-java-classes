@@ -18,10 +18,7 @@ import * as React from "react";
 import { useState } from "react";
 import { ModalWizard } from "../ModalWizard";
 import { useImportJavaClassesWizardI18n } from "../../i18n";
-import {
-  InputGroup,
-  TextInput,
-} from '@patternfly/react-core';
+import { ImportJavaClassesWizardFirstStepContent } from "../ImportJavaClassesWizardFirstStepContent";
 
 export const ImportJavaClassesWizard: React.FunctionComponent<ImportJavaClassesWizardProps> = ({
   buttonStyle,
@@ -31,26 +28,20 @@ export const ImportJavaClassesWizard: React.FunctionComponent<ImportJavaClassesW
   const { i18n } = useImportJavaClassesWizardI18n();
   const [isSecondStepEnabled, enableSecondStep] = useState(false);
   const [isThirdStepEnabled] = useState(false);
-  const handleModalToggle = (value : string) => { 
-    if (value === "enable") {enableSecondStep(true); }; 
-    if (value === "disable") {enableSecondStep(false); }; 
+  const handleModalToggle = (value: string) => {
+    if (value === "enable") { enableSecondStep(true); }
+    if (value === "disable") { enableSecondStep(false); }
   };
 
-  function SearchJavaClass() {
-    return <InputGroup label="Search">
-      <TextInput 
-        label="Search" 
-        name="textInput11" 
-        id="textInput11" 
-        type="search" 
-        aria-label="search input example" 
-        placeholder="Search a class name..."
-        onChange = {handleModalToggle} />
-    </InputGroup>
-  }
+  const firstStepComponent = <ImportJavaClassesWizardFirstStepContent
+    inputLabel={i18n.modalWizard.firstStep.input.label}
+    inputPlaceHolder={i18n.modalWizard.firstStep.input.label}
+    inputOnChange={handleModalToggle}
+    emptyStateTitle={i18n.modalWizard.firstStep.emptyState.title}
+    emptyStateBody={i18n.modalWizard.firstStep.emptyState.body} />
 
   const steps = [
-    { name: i18n.modalWizard.firstStep.stepName, component: <SearchJavaClass />, enableNext: isSecondStepEnabled, canJumpTo: false, hideBackButton: true },
+    { name: i18n.modalWizard.firstStep.stepName, component: firstStepComponent, enableNext: isSecondStepEnabled, canJumpTo: false, hideBackButton: true },
     { name: i18n.modalWizard.secondStep.stepName, component: <p>Step 2 content</p>, enableNext: isThirdStepEnabled, canJumpTo: false },
     { name: i18n.modalWizard.thirdStep.stepName, component: <p>Step 3 content</p>, enableNext: false, canJumpTo: false, nextButtonText: i18n.modalWizard.thirdStep.nextButtonText }
   ];
