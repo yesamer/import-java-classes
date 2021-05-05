@@ -21,7 +21,7 @@ import { Button, Wizard, WizardStep } from '@patternfly/react-core';
 export const ModalWizard: React.FunctionComponent<ModalWizardProps> = ({
     buttonText,
     buttonStyle,
-    buttonIcon, 
+    buttonIcon,
     wizardTitle,
     wizardDescription,
     wizardSteps,
@@ -49,9 +49,9 @@ export interface ModalWizardProps {
 
     buttonIcon?: React.ReactNode;
 
-    wizardTitle : string;
+    wizardTitle: string;
 
-    wizardDescription : string;
+    wizardDescription: string;
 
-    wizardSteps : WizardStep[];
+    wizardSteps: WizardStep[];
 }

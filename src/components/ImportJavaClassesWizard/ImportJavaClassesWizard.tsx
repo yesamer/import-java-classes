@@ -29,7 +29,7 @@ export const ImportJavaClassesWizard: React.FunctionComponent<ImportJavaClassesW
   const [isSecondStepEnabled, enableSecondStep] = useState(false);
   const [isThirdStepEnabled] = useState(false);
   const handleModalToggle = (value: string) => {
-    var toEnable : boolean;
+    var toEnable: boolean;
     if (value === "Author" || value === "Book") { toEnable = true; }
     else if (value === "disable") { toEnable = false }
     else { toEnable = false; }

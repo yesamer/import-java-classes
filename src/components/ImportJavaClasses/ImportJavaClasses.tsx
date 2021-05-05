@@ -35,8 +35,8 @@ export const ImportJavaClasses: React.FunctionComponent<ImportJavaClassesProps> 
             initialLocale={navigator.language}
             ctx={ImportJavaClassesWizardI18nContext}
         >
-            <ImportJavaClassesWizard 
-                buttonStyle={buttonStyle} 
+            <ImportJavaClassesWizard
+                buttonStyle={buttonStyle}
                 buttonIcon={buttonIcon} />
         </I18nDictionariesProvider>
     )
