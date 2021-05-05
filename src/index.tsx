@@ -3,28 +3,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './GWTBridge';
-import { I18nDictionariesProvider } from "@kogito-tooling/i18n/dist/react-components";
-import {
-  importJavaClassesWizardI18nDictionaries,
-  ImportJavaClassesWizardI18nContext,
-  importJavaClassesWizardI18nDefaults,
-} from "./i18n";
-import { ImportJavaClassesWizard } from "./components/ImportJavaClassesWizard";
-
-function ImportJavaClasses() {
-  return (
-    <I18nDictionariesProvider
-      defaults={importJavaClassesWizardI18nDefaults}
-      dictionaries={importJavaClassesWizardI18nDictionaries}
-      initialLocale={navigator.language}
-      ctx={ImportJavaClassesWizardI18nContext}
-    >
-      <ImportJavaClassesWizard buttonText="Import Java classes" />
-    </I18nDictionariesProvider>
-  )  
-}
+import { ImportJavaClasses } from "./components/ImportJavaClasses/ImportJavaClasses";
 
 ReactDOM.render(
-  <ImportJavaClasses />,
+  <ImportJavaClasses buttonStyle="secondary" />,
   document.getElementById('root')
 );

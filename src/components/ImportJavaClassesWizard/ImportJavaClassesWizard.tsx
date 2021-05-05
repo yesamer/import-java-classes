@@ -24,7 +24,8 @@ import {
 } from '@patternfly/react-core';
 
 export const ImportJavaClassesWizard: React.FunctionComponent<ImportJavaClassesWizardProps> = ({
-  buttonText,
+  buttonStyle,
+  buttonIcon
 }: ImportJavaClassesWizardProps) => {
 
   const { i18n } = useImportJavaClassesWizardI18n();
@@ -55,7 +56,8 @@ export const ImportJavaClassesWizard: React.FunctionComponent<ImportJavaClassesW
   ];
 
   return <ModalWizard
-    buttonStyle="secondary"
+    buttonIcon={buttonIcon}
+    buttonStyle={buttonStyle}
     buttonText={i18n.modalButton.text}
     wizardTitle={i18n.modalWizard.title}
     wizardDescription={i18n.modalWizard.description}
@@ -63,5 +65,7 @@ export const ImportJavaClassesWizard: React.FunctionComponent<ImportJavaClassesW
 }
 
 export interface ImportJavaClassesWizardProps {
-  buttonText: string;
+  buttonStyle: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'warning' | 'link' | 'plain' | 'control';
+
+  buttonIcon?: React.ReactNode;
 }

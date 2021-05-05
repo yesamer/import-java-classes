@@ -30,7 +30,7 @@ export const ModalWizard: React.FunctionComponent<ModalWizardProps> = ({
     const handleModalToggle = () => setOpen(!isOpen);
 
     return <>
-        <Button variant={buttonStyle} icon={buttonIcon} onClick= {handleModalToggle}>
+        <Button variant={buttonStyle} icon={buttonIcon} onClick={handleModalToggle}>
             {buttonText}
         </Button>
         <Wizard
