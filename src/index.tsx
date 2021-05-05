@@ -2,6 +2,7 @@ import "@patternfly/react-core/dist/styles/base.css";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './GWTBridge';
 import { I18nDictionariesProvider } from "@kogito-tooling/i18n/dist/react-components";
 import {
   importJavaClassesWizardI18nDictionaries,
