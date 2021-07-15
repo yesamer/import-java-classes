@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/import-java-classes/static/css/main.4224bb4c.chunk.css",
+    "main.js": "/import-java-classes/static/js/main.3770fc94.chunk.js",
+    "main.js.map": "/import-java-classes/static/js/main.3770fc94.chunk.js.map",
+    "runtime-main.js": "/import-java-classes/static/js/runtime-main.84a57ed0.js",
+    "runtime-main.js.map": "/import-java-classes/static/js/runtime-main.84a57ed0.js.map",
+    "static/css/2.5cf49bf4.chunk.css": "/import-java-classes/static/css/2.5cf49bf4.chunk.css",
+    "static/js/2.00376538.chunk.js": "/import-java-classes/static/js/2.00376538.chunk.js",
+    "static/js/2.00376538.chunk.js.map": "/import-java-classes/static/js/2.00376538.chunk.js.map",
+    "index.html": "/import-java-classes/index.html",
+    "static/css/2.5cf49bf4.chunk.css.map": "/import-java-classes/static/css/2.5cf49bf4.chunk.css.map",
+    "static/css/main.4224bb4c.chunk.css.map": "/import-java-classes/static/css/main.4224bb4c.chunk.css.map",
+    "static/js/2.00376538.chunk.js.LICENSE.txt": "/import-java-classes/static/js/2.00376538.chunk.js.LICENSE.txt",
+    "static/media/base.css": "/import-java-classes/static/media/pficon.a32f4243.woff",
+    "static/media/background-image.css": "/import-java-classes/static/media/pfbg_768@2x.eea28e73.jpg",
+    "static/media/about-modal-box.css": "/import-java-classes/static/media/pfbg_992@2x.30e8d31f.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.84a57ed0.js",
+    "static/css/2.5cf49bf4.chunk.css",
+    "static/js/2.00376538.chunk.js",
+    "static/css/main.4224bb4c.chunk.css",
+    "static/js/main.3770fc94.chunk.js"
+  ]
+}
